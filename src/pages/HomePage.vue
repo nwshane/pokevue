@@ -11,6 +11,7 @@
 import PokeballImage from "../components/PokeballImage";
 
 export default {
+  name: "HomePage",
   components: { PokeballImage },
   data: () => ({
     showText: false

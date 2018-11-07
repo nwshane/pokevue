@@ -16,7 +16,8 @@ export default {
     title: {
       inner: "All da poke"
     }
-  }
+  },
+  name: "AllDaPokePage"
 };
 </script>
 
