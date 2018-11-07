@@ -23,7 +23,15 @@ export default {
 div {
   display: flex;
   justify-content: center;
+  text-align: center;
   margin-top: 30vh;
   height: 100vh;
+}
+h1 {
+  font-family: "Spicy Rice", cursive;
+  font-size: 50px;
+}
+a {
+  text-decoration: none;
 }
 </style>

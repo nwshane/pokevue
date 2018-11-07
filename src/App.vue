@@ -6,6 +6,14 @@
 
 <script>
 export default {
+  head: {
+    link: [
+      {
+        href: "https://fonts.googleapis.com/css?family=Spicy+Rice",
+        rel: "stylesheet"
+      }
+    ]
+  },
   name: "app"
 };
 </script>
