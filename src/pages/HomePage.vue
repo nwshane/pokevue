@@ -1,7 +1,7 @@
 <template>
 <div>
   <router-link to="/all-da-poke">
-    <PokeballImage />
+    <PokeballImage v-bind:rotate="true" />
     <h1 v-show="showText">Enter the PokeVue!</h1>
   </router-link>
 </div>
