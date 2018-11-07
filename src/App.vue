@@ -1,17 +1,19 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="https://seeklogo.com/images/P/pokeball-logo-DC23868CA1-seeklogo.com.png">
-    <PokemonList v-bind:number="8" />
+    <HomePage />
+    <AllDaPokePage />
   </div>
 </template>
 
 <script>
-import PokemonList from "./components/PokemonList";
+import HomePage from "./pages/HomePage";
+import AllDaPokePage from "./pages/AllDaPokePage";
 
 export default {
   name: "app",
   components: {
-    PokemonList
+    HomePage,
+    AllDaPokePage
   }
 };
 </script>
