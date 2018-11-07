@@ -1,20 +1,12 @@
 <template>
   <div id="app">
-    <HomePage />
-    <AllDaPokePage />
+    <router-view />
   </div>
 </template>
 
 <script>
-import HomePage from "./pages/HomePage";
-import AllDaPokePage from "./pages/AllDaPokePage";
-
 export default {
-  name: "app",
-  components: {
-    HomePage,
-    AllDaPokePage
-  }
+  name: "app"
 };
 </script>
 
