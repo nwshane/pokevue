@@ -2,9 +2,7 @@
 
 <ul>
   <li v-for="pokemon in pokemonList" :key="pokemon.id">
-    <h2>
-      {{pokemon.name}}
-    </h2>
+    <PokemonItem v-bind:name="pokemon.name" />
   </li>
 </ul>
 
@@ -13,9 +11,14 @@
 <script>
 import axios from "axios";
 
+import PokemonItem from "./PokemonItem";
+
 export default {
   props: {
     number: Number
+  },
+  components: {
+    PokemonItem
   },
   data() {
     return {
