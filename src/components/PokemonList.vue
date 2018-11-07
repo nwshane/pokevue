@@ -1,13 +1,12 @@
 <template>
-<div>
+
 <ul>
-    <li v-for="pokemon in pokemonList" :key="pokemon.id">
-      <h2>
-        {{pokemon.name}}
-      </h2>
-    </li>
+  <li v-for="pokemon in pokemonList" :key="pokemon.id">
+    <h2>
+      {{pokemon.name}}
+    </h2>
+  </li>
 </ul>
-</div>
 
 </template>
 
@@ -15,6 +14,9 @@
 import axios from "axios";
 
 export default {
+  props: {
+    number: Number
+  },
   data() {
     return {
       pokemonList: null
@@ -25,7 +27,7 @@ export default {
       .results;
 
     const pokemonDataList = await Promise.all(
-      pokemonUrls.slice(0, 5).map(result => axios(result.url))
+      pokemonUrls.slice(0, this.number).map(result => axios(result.url))
     );
 
     this.pokemonList = pokemonDataList.map(pokemon => pokemon.data);
@@ -34,10 +36,6 @@ export default {
 </script>
 
 <style scoped>
-div {
-  margin: 0 auto;
-  max-width: 800px;
-}
 ul {
   list-style-type: none;
   padding: 0;
