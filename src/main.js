@@ -1,11 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import VueHead from "vue-head";
 
 import App from "./App.vue";
 import HomePage from "./pages/HomePage";
 import AllDaPokePage from "./pages/AllDaPokePage";
 
 Vue.use(VueRouter);
+Vue.use(VueHead, {
+  complement: "Pokevue"
+});
 Vue.config.productionTip = false;
 
 const routes = [
