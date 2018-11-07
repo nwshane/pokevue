@@ -1,7 +1,13 @@
 <template>
+<div>
 <ul>
-    <li>{{pokemon[0].name}}</li>
+    <li v-for="pokemon in pokemonList" :key="pokemon.id">
+      <h2>
+        {{pokemon.name}}
+      </h2>
+    </li>
 </ul>
+</div>
 
 </template>
 
@@ -11,22 +17,29 @@ import axios from "axios";
 export default {
   data() {
     return {
-      pokemon: ["Charizard", "Bulbosaur"]
+      pokemonList: null
     };
   },
   async mounted() {
     const pokemonUrls = (await axios("https://pokeapi.co/api/v2/pokemon/")).data
       .results;
 
-    const pokemonList = await Promise.all(
+    const pokemonDataList = await Promise.all(
       pokemonUrls.slice(0, 5).map(result => axios(result.url))
     );
 
-    this.pokemon = pokemonList.map(pokemon => pokemon.data);
-    console.table(this.pokemon);
+    this.pokemonList = pokemonDataList.map(pokemon => pokemon.data);
   }
 };
 </script>
 
-<style>
+<style scoped>
+div {
+  margin: 0 auto;
+  max-width: 800px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
 </style>
